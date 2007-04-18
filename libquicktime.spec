@@ -1,8 +1,8 @@
 %define name libquicktime
 %define major 0
-%define version 0.9.10
+%define version 1.0.0
 %define fversion %version
-%define release %mkrel 2
+%define release %mkrel 1
 %define build_plf 0
 %define mdkversion		%(perl -pe '/(\\d+)\\.(\\d)\\.?(\\d)?/; $_="$1$2".($3||0)' /etc/mandrake-release)
 %if %mdkversion <= 900
@@ -28,9 +28,6 @@ License:	LGPL
 %endif
 Group:		Video
 Source0:	http://prdownloads.sourceforge.net/libquicktime/%{name}-%{fversion}.tar.bz2
-Patch0:		libquicktime-0.9.3-lib64.patch
-Patch1:		libquicktime-0.9.10-x264.patch
-Patch3:		libquicktime-0.9.3-automake-man_MANS.patch
 URL:		http://libquicktime.sourceforge.net/
 BuildRequires:	png-devel
 BuildRequires:	jpeg-devel
@@ -163,21 +160,15 @@ This package is in PLF as it violates some patents.
 
 %prep
 %setup -q -n %name-%fversion
-%patch0 -p1 -b .lib64
-%patch1 -p1 -b .x264
-%patch3 -p1 -b .automake-man_MANS
 
 %build
-# needed for updated libtool & fixed Makefile.am
-aclocal-1.9 -I m4
-autoheader
-autoconf
-automake-1.9 -a -c --foreign
 
+%configure2_5x \
+%ifarch x86_64
+--with-pic \
+%endif
 %if %build_plf 
-%configure2_5x --enable-gpl
-%else
-%configure2_5x                      
+--enable-gpl 
 %endif
  
 %make 
@@ -189,14 +180,15 @@ rm -f %buildroot%_libdir/libquicktime/*a
 rm -f %buildroot%_libdir/*.la
 rm -f %buildroot%_libdir/libquicktime/lqt_opendivx.so
 cp lqt-config %buildroot%_bindir 
- 
+%find_lang %name
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post  -n %libname -p /sbin/ldconfig
 %postun -n %libname -p /sbin/ldconfig
 
-%files
+%files -f %name.lang
 %defattr(-,root,root)
 %doc README
 %dir %{_libdir}/libquicktime/
