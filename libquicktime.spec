@@ -147,7 +147,7 @@ This is a libquicktime plugin for AAC decoding based on faad2.
 This package is in PLF as it violates some patents.
 
 %package x264
-Summary: Libquicktime plugin for encoding H.264/MPEG-4 streams.
+Summary: Libquicktime plugin for encoding H.264/MPEG-4 streams
 Group:		Video
 Requires:	%{name} = %{version}
 BuildRequires: libx264-devel
