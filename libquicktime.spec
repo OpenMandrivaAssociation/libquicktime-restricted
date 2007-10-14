@@ -4,15 +4,8 @@
 %define fversion %version
 %define release %mkrel 1
 %define build_plf 0
-%define mdkversion		%(perl -pe '/(\\d+)\\.(\\d)\\.?(\\d)?/; $_="$1$2".($3||0)' /etc/mandriva-release)
-%if %mdkversion <= 900
-%define libname %name%major
-%else
 %define libname %mklibname quicktime %major
-%endif
 %define develname %mklibname quicktime -d
-#fixed2
-%{?!mkrel:%define mkrel(c:) %{-c: 0.%{-c*}.}%{!?_with_unstable:%(perl -e '$_="%{1}";m/(.\*\\D\+)?(\\d+)$/;$rel=${2}-1;re;print "$1$rel";').%{?subrel:%subrel}%{!?subrel:1}.%{?distversion:%distversion}%{?!distversion:%(echo $[%{mdkversion}/10])}}%{?_with_unstable:%{1}}%{?distsuffix:%distsuffix}%{?!distsuffix:mdk}}
 %{?_with_plf: %{expand: %%global build_plf 1}} 
 %if %build_plf
 %define distsuffix plf
@@ -39,13 +32,9 @@ BuildRequires:  MesaGLU-devel
 BuildRequires:	libgtk+2.0-devel
 BuildRequires:	libffmpeg-devel
 BuildRequires:	libalsa-devel
-%if %mdkversion >= 200700
 BuildRequires:	libice-devel
 BuildRequires:	libxaw-devel
 BuildRequires:	libxv-devel
-%else
-BuildRequires:	X11-devel
-%endif
 BuildRoot:	%_tmppath/%name-%version
 
 %description
