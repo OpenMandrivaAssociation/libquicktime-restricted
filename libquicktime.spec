@@ -1,6 +1,6 @@
 %define name libquicktime
 %define major 0
-%define version 1.0.0
+%define version 1.0.1
 %define fversion %version
 %define release %mkrel 1
 %define build_plf 0
@@ -10,6 +10,7 @@
 %else
 %define libname %mklibname quicktime %major
 %endif
+%define develname %mklibname quicktime -d
 #fixed2
 %{?!mkrel:%define mkrel(c:) %{-c: 0.%{-c*}.}%{!?_with_unstable:%(perl -e '$_="%{1}";m/(.\*\\D\+)?(\\d+)$/;$rel=${2}-1;re;print "$1$rel";').%{?subrel:%subrel}%{!?subrel:1}.%{?distversion:%distversion}%{?!distversion:%(echo $[%{mdkversion}/10])}}%{?_with_unstable:%{1}}%{?distsuffix:%distsuffix}%{?!distsuffix:mdk}}
 %{?_with_plf: %{expand: %%global build_plf 1}} 
@@ -27,13 +28,13 @@ License:	GPL
 License:	LGPL
 %endif
 Group:		Video
-Source0:	http://prdownloads.sourceforge.net/libquicktime/%{name}-%{fversion}.tar.bz2
+Source0:	http://prdownloads.sourceforge.net/libquicktime/%{name}-%{fversion}.tar.gz
 URL:		http://libquicktime.sourceforge.net/
 BuildRequires:	png-devel
 BuildRequires:	jpeg-devel
 BuildRequires: 	oggvorbis-devel
-BuildRequires:  autoconf2.5
-BuildRequires:	automake1.9
+BuildRequires:  autoconf
+BuildRequires:	automake
 BuildRequires:  MesaGLU-devel
 BuildRequires:	libgtk+2.0-devel
 BuildRequires:	libffmpeg-devel
@@ -76,16 +77,18 @@ features such as a GNU build tools-based build process and dynamically
 loadable CODECs.
 
 
-%package -n %libname-devel
+%package -n %develname
 Summary:	Header files and development documentation for libquicktime
 Group:		Development/C
 Provides:	libquicktime-devel = %version-%release
 Provides:	quicktime-devel = %version-%release
+Provides:	quicktime-static-devel = %version-%release
 Provides:	%libname-static-devel = %version-%release
 Obsoletes:	%libname-static-devel = %version-%release
+Obsoletes:	%mklibname -d quicktime 0
 Requires:	%{libname} = %{version}
 
-%description -n %libname-devel
+%description -n %develname
 Header files and development documentation for libquicktime.
 
 
@@ -98,13 +101,13 @@ BuildRequires:	libdv-devel >= 0.9
 %description dv
 Libquicktime plugin supporting the DV codec
 
-%package -n %libname-static-devel
-Summary:	Static libquicktime libraries
-Group:		Development/C
-Requires:	%{libname}-devel = %{version}
+#%package -n %libname-static-devel
+#Summary:	Static libquicktime libraries
+#Group:		Development/C
+#Requires:	%{libname}-devel = %{version}
 
-%description -n %libname-static-devel
-Static libquicktime libraries.
+#%description -n %libname-static-devel
+#Static libquicktime libraries.
 
 %package progs
 Summary:	Useful tools to operate at QuickTime files
@@ -208,7 +211,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_libdir}/libquicktime.so.%{major}*
 
-%files -n %libname-devel
+%files -n %develname
 %defattr(-,root,root)
 %{_libdir}/lib*.so
 %{_includedir}/lqt
