@@ -35,7 +35,6 @@ BuildRequires:	libalsa-devel
 BuildRequires:	libice-devel
 BuildRequires:	libxaw-devel
 BuildRequires:	libxv-devel
-BuildRoot:	%_tmppath/%name-%version
 
 %description
 Libquicktime is a library for reading and writing QuickTime files
