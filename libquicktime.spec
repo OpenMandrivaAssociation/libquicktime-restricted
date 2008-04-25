@@ -2,7 +2,7 @@
 %define major 0
 %define version 1.0.2
 %define fversion %version
-%define release %mkrel 2
+%define release %mkrel 3
 %define build_plf 0
 %define libname %mklibname quicktime %major
 %define develname %mklibname quicktime -d
@@ -16,12 +16,13 @@ Name:		%name
 Version:	%version
 Release:	%release
 %if %build_plf
-License:	GPL
+License:	GPLv2+
 %else
-License:	LGPL
+License:        LGPLv2+
 %endif
 Group:		Video
 Source0:	http://prdownloads.sourceforge.net/libquicktime/%{name}-%{fversion}.tar.gz
+Patch: libquicktime-1.0.2-new-ffmpeg.patch
 URL:		http://libquicktime.sourceforge.net/
 BuildRequires:	png-devel
 BuildRequires:	jpeg-devel
@@ -152,6 +153,12 @@ This package is in PLF as it violates some patents.
 
 %prep
 %setup -q -n %name-%fversion
+%if %mdvver >= 200900
+%patch -p1
+aclocal -I m4
+autoconf
+automake
+%endif
 
 %build
 
@@ -159,7 +166,7 @@ This package is in PLF as it violates some patents.
 %ifarch x86_64
 --with-pic \
 %endif
-%if %build_plf 
+%if %build_plf
 --enable-gpl 
 %endif
  
