@@ -35,6 +35,7 @@ BuildRequires:	libalsa-devel
 BuildRequires:	libice-devel
 BuildRequires:	libxaw-devel
 BuildRequires:	libxv-devel
+BuildRequires:	doxygen
 BuildRoot:	%_tmppath/%name-%version
 
 %description
