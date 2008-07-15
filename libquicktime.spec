@@ -1,8 +1,8 @@
 %define name libquicktime
 %define major 0
-%define version 1.0.2
+%define version 1.0.3
 %define fversion %version
-%define release %mkrel 4
+%define release %mkrel 1
 %define build_plf 0
 %define libname %mklibname quicktime %major
 %define develname %mklibname quicktime -d
@@ -22,7 +22,6 @@ License:        LGPLv2+
 %endif
 Group:		Video
 Source0:	http://prdownloads.sourceforge.net/libquicktime/%{name}-%{fversion}.tar.gz
-Patch: libquicktime-1.0.2-new-ffmpeg.patch
 URL:		http://libquicktime.sourceforge.net/
 BuildRequires:	png-devel
 BuildRequires:	jpeg-devel
@@ -86,7 +85,7 @@ Header files and development documentation for libquicktime.
 Summary:	Libquicktime plugin supporting the DV codec
 Group:		Video
 Requires:	%{name} = %{version}
-BuildRequires:	libdv-devel >= 0.9
+BuildRequires:	libdv-devel >= 0.103
 
 %description dv
 Libquicktime plugin supporting the DV codec
@@ -153,16 +152,11 @@ This package is in PLF as it violates some patents.
 
 %prep
 %setup -q -n %name-%fversion
-%if %mdvver >= 200900
-%patch -p1
-aclocal -I m4
-autoconf
-automake
-%endif
 
 %build
 
 %configure2_5x \
+--with-libdv \
 %ifarch x86_64
 --with-pic \
 %endif
