@@ -1,8 +1,8 @@
 %define name libquicktime
 %define major 0
-%define version 1.1.1
+%define version 1.1.2
 %define fversion %version
-%define release %mkrel 2
+%define release %mkrel 1
 %define build_plf 0
 %define libname %mklibname quicktime %major
 %define develname %mklibname quicktime -d
@@ -22,7 +22,6 @@ License:        LGPLv2+
 %endif
 Group:		Video
 Source0:	http://prdownloads.sourceforge.net/libquicktime/%{name}-%{fversion}.tar.gz
-Patch:		libquicktime-1.1.1-format-strings.patch
 URL:		http://libquicktime.sourceforge.net/
 BuildRequires:	png-devel
 BuildRequires:	jpeg-devel
@@ -36,6 +35,7 @@ BuildRequires:	libalsa-devel
 BuildRequires:	libice-devel
 BuildRequires:	libxaw-devel
 BuildRequires:	libxv-devel
+BuildRequires:	libschroedinger-devel
 BuildRequires:	doxygen
 BuildRoot:	%_tmppath/%name-%version
 
@@ -154,7 +154,6 @@ This package is in PLF as it violates some patents.
 
 %prep
 %setup -q -n %name-%fversion
-%patch -p1
 
 %build
 
@@ -198,6 +197,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libquicktime/lqt_png.so
 %{_libdir}/libquicktime/lqt_videocodec.so
 %{_libdir}/libquicktime/lqt_rtjpeg.so
+%{_libdir}/libquicktime/lqt_schroedinger.so
 %{_libdir}/libquicktime/lqt_vorbis.so
  
 %files dv
