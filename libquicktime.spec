@@ -2,7 +2,7 @@
 %define major 0
 %define version 1.1.3
 %define fversion %version
-%define release %mkrel 3
+%define release %mkrel 4
 %define build_plf 0
 %define libname %mklibname quicktime %major
 %define develname %mklibname quicktime -d
