@@ -1,8 +1,8 @@
 %define name libquicktime
 %define major 0
-%define version 1.1.3
+%define version 1.1.4
 %define fversion %version
-%define release %mkrel 4
+%define release %mkrel 1
 %define build_plf 0
 %define libname %mklibname quicktime %major
 %define develname %mklibname quicktime -d
@@ -22,8 +22,6 @@ License:        LGPLv2+
 %endif
 Group:		Video
 Source0:	http://prdownloads.sourceforge.net/libquicktime/%{name}-%{fversion}.tar.gz
-#gw from CVS, build with new x264
-Patch: 		libquicktime-new-x264.patch
 URL:		http://libquicktime.sourceforge.net/
 BuildRequires:	png-devel
 BuildRequires:	jpeg-devel
@@ -156,8 +154,6 @@ This package is in PLF as it violates some patents.
 
 %prep
 %setup -q -n %name-%fversion
-cd plugins/x264
-%patch
 
 %build
 
