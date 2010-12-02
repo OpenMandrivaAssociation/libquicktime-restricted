@@ -1,8 +1,8 @@
 %define name libquicktime
 %define major 0
-%define version 1.1.5
+%define version 1.2.0
 %define fversion %version
-%define release %mkrel 3
+%define release %mkrel 1
 %define build_plf 0
 %define libname %mklibname quicktime %major
 %define develname %mklibname quicktime -d
@@ -176,7 +176,6 @@ rm -rf $RPM_BUILD_ROOT
 rm -f %buildroot%_libdir/libquicktime/*a
 rm -f %buildroot%_libdir/*.la
 rm -f %buildroot%_libdir/libquicktime/lqt_opendivx.so
-cp lqt-config %buildroot%_bindir 
 %find_lang %name
 
 %clean
@@ -214,8 +213,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_libdir}/lib*.so
 %{_includedir}/lqt
-%_datadir/aclocal/lqt.m4
-%{_bindir}/lqt-config
 %_libdir/pkgconfig/*.pc
 
 %files progs
@@ -223,6 +220,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README TODO
 %{_bindir}/libquicktime_config
 %_bindir/lqtplay
+%_bindir/lqtremux
 %_bindir/lqt_transcode
 %_bindir/qt*
 %_mandir/man1/lqtplay.1*
