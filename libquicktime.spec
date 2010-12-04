@@ -1,6 +1,6 @@
 %define name libquicktime
 %define major 0
-%define version 1.2.0
+%define version 1.2.1
 %define fversion %version
 %define release %mkrel 1
 %define build_plf 0
