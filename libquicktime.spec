@@ -1,8 +1,8 @@
 %define name libquicktime
 %define major 0
-%define version 1.2.1
+%define version 1.2.2
 %define fversion %version
-%define release %mkrel 2
+%define release %mkrel 1
 %define build_plf 0
 %define libname %mklibname quicktime %major
 %define develname %mklibname quicktime -d
@@ -22,7 +22,6 @@ License:        LGPLv2+
 %endif
 Group:		Video
 Source0:	http://prdownloads.sourceforge.net/libquicktime/%{name}-%{fversion}.tar.gz
-Patch0:		libquicktime-1.1.5-newer-gtk.patch
 URL:		http://libquicktime.sourceforge.net/
 BuildRequires:	png-devel
 BuildRequires:	jpeg-devel
@@ -155,7 +154,6 @@ This package is in PLF as it violates some patents.
 
 %prep
 %setup -q -n %name-%fversion
-%patch0 -p1
 
 %build
 
