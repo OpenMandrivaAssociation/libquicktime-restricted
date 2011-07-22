@@ -2,19 +2,23 @@
 %define major 0
 %define version 1.2.3
 %define fversion %version
-%define release %mkrel 1
+%define release %mkrel 2
 %define build_plf 0
 %define libname %mklibname quicktime %major
 %define develname %mklibname quicktime -d
 %{?_with_plf: %{expand: %%global build_plf 1}} 
 %if %build_plf
+%if %mdvver >= 201100
+# make EVR of plf build higher than regular to allow update, needed with rpm5 mkrel
+%define extrarelsuffix plf
+%endif
 %define distsuffix plf
 %endif
 
 Summary:	A library for manipulating QuickTime files
 Name:		%name
 Version:	%version
-Release:	%release
+Release:	%release%{?extrarelsuffix}
 %if %build_plf
 License:	GPLv2+
 %else
