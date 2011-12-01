@@ -173,7 +173,7 @@ This package is in PLF as it violates some patents.
 %make 
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 rm -f %buildroot%_libdir/libquicktime/*a
 rm -f %buildroot%_libdir/*.la
@@ -181,7 +181,7 @@ rm -f %buildroot%_libdir/libquicktime/lqt_opendivx.so
 %find_lang %name
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post  -n %libname -p /sbin/ldconfig
