@@ -32,7 +32,7 @@ BuildRequires:	jpeg-devel
 BuildRequires: 	oggvorbis-devel
 BuildRequires:  autoconf
 BuildRequires:	automake
-BuildRequires:  MesaGLU-devel
+BuildRequires:  mesaglu-devel
 BuildRequires:	libgtk+2.0-devel
 BuildRequires:	ffmpeg-devel
 BuildRequires:	libalsa-devel
