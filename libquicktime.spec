@@ -34,7 +34,7 @@ BuildRequires:  autoconf
 BuildRequires:	automake
 BuildRequires:  MesaGLU-devel
 BuildRequires:	libgtk+2.0-devel
-BuildRequires:	libffmpeg-devel
+BuildRequires:	ffmpeg-devel
 BuildRequires:	libalsa-devel
 BuildRequires:	libice-devel
 BuildRequires:	libxaw-devel
