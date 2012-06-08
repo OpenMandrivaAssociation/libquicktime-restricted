@@ -1,8 +1,5 @@
-%define name libquicktime
 %define major 0
-%define version 1.2.4
 %define fversion %version
-%define release %mkrel 1
 %define build_plf 0
 %define libname %mklibname quicktime %major
 %define develname %mklibname quicktime -d
@@ -16,9 +13,9 @@
 %endif
 
 Summary:	A library for manipulating QuickTime files
-Name:		%name
-Version:	%version
-Release:	%release%{?extrarelsuffix}
+Name:		libquicktime
+Version:	1.2.4
+Release:	2%{?extrarelsuffix}
 %if %build_plf
 License:	GPLv2+
 %else
