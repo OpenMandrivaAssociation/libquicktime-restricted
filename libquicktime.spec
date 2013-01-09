@@ -17,7 +17,7 @@
 Summary:	A library for manipulating QuickTime files
 Name:		libquicktime
 Version:	1.2.4
-Release:	2%{?extrarelsuffix}
+Release:	3%{?extrarelsuffix}
 %if %{build_plf}
 License:	GPLv2+
 %else
@@ -220,7 +220,7 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 - Build for ffmpeg 0.11
 - Clean up spec file
 
-* Fri Mar 30 2012 Götz Waschk <waschk@mandriva.org> 1.2.4-1
+* Fri Mar 30 2012 GÃ¶tz Waschk <waschk@mandriva.org> 1.2.4-1
 + Revision: 788313
 - update build deps
 - new version
@@ -229,11 +229,11 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 + Revision: 702456
 - attempt to relink against libpng15.so.15
 
-* Fri Jul 22 2011 Götz Waschk <waschk@mandriva.org> 1.2.3-2
+* Fri Jul 22 2011 GÃ¶tz Waschk <waschk@mandriva.org> 1.2.3-2
 + Revision: 691077
 - fix plf suffix
 
-* Mon Jul 11 2011 Götz Waschk <waschk@mandriva.org> 1.2.3-1
+* Mon Jul 11 2011 GÃ¶tz Waschk <waschk@mandriva.org> 1.2.3-1
 + Revision: 689499
 - update to new version 1.2.3
 
@@ -241,20 +241,20 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 + Revision: 661519
 - mass rebuild
 
-* Sat Jan 08 2011 Götz Waschk <waschk@mandriva.org> 1.2.2-1mdv2011.0
+* Sat Jan 08 2011 GÃ¶tz Waschk <waschk@mandriva.org> 1.2.2-1mdv2011.0
 + Revision: 630559
 - new version
 - drop patch
 
-* Mon Dec 06 2010 Götz Waschk <waschk@mandriva.org> 1.2.1-2mdv2011.0
+* Mon Dec 06 2010 GÃ¶tz Waschk <waschk@mandriva.org> 1.2.1-2mdv2011.0
 + Revision: 612343
 - rebuild
 
-* Sat Dec 04 2010 Götz Waschk <waschk@mandriva.org> 1.2.1-1mdv2011.0
+* Sat Dec 04 2010 GÃ¶tz Waschk <waschk@mandriva.org> 1.2.1-1mdv2011.0
 + Revision: 609229
 - update to new version 1.2.1
 
-* Thu Dec 02 2010 Götz Waschk <waschk@mandriva.org> 1.2.0-1mdv2011.0
+* Thu Dec 02 2010 GÃ¶tz Waschk <waschk@mandriva.org> 1.2.0-1mdv2011.0
 + Revision: 604758
 - new version
 - update file list
@@ -266,15 +266,15 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
   + Oden Eriksson <oeriksson@mandriva.com>
     - rebuild
 
-* Wed May 05 2010 Götz Waschk <waschk@mandriva.org> 1.1.5-2mdv2010.1
+* Wed May 05 2010 GÃ¶tz Waschk <waschk@mandriva.org> 1.1.5-2mdv2010.1
 + Revision: 542327
 - rebuild
 
-* Wed Feb 24 2010 Götz Waschk <waschk@mandriva.org> 1.1.5-1mdv2010.1
+* Wed Feb 24 2010 GÃ¶tz Waschk <waschk@mandriva.org> 1.1.5-1mdv2010.1
 + Revision: 510508
 - update to new version 1.1.5
 
-* Sat Jan 23 2010 Götz Waschk <waschk@mandriva.org> 1.1.4-3mdv2010.1
+* Sat Jan 23 2010 GÃ¶tz Waschk <waschk@mandriva.org> 1.1.4-3mdv2010.1
 + Revision: 495208
 - rebuild
 
@@ -282,16 +282,16 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 + Revision: 488781
 - rebuilt against libjpeg v8
 
-* Fri Jan 08 2010 Götz Waschk <waschk@mandriva.org> 1.1.4-1mdv2010.1
+* Fri Jan 08 2010 GÃ¶tz Waschk <waschk@mandriva.org> 1.1.4-1mdv2010.1
 + Revision: 487473
 - new version
 - drop patch
 
-* Thu Dec 10 2009 Götz Waschk <waschk@mandriva.org> 1.1.3-4mdv2010.1
+* Thu Dec 10 2009 GÃ¶tz Waschk <waschk@mandriva.org> 1.1.3-4mdv2010.1
 + Revision: 475967
 - rebuild
 
-* Mon Nov 09 2009 Götz Waschk <waschk@mandriva.org> 1.1.3-3mdv2010.1
+* Mon Nov 09 2009 GÃ¶tz Waschk <waschk@mandriva.org> 1.1.3-3mdv2010.1
 + Revision: 463551
 - fix build with new x264
 
@@ -299,7 +299,7 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 + Revision: 416624
 - rebuilt against libjpeg v7
 
-* Tue Jul 14 2009 Götz Waschk <waschk@mandriva.org> 1.1.3-1mdv2010.0
+* Tue Jul 14 2009 GÃ¶tz Waschk <waschk@mandriva.org> 1.1.3-1mdv2010.0
 + Revision: 395828
 - update to new version 1.1.3
 
@@ -309,26 +309,26 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 - Remove string format pathc
 - Build with schroedinger (dirac) support
 
-* Wed Feb 11 2009 Götz Waschk <waschk@mandriva.org> 1.1.1-2mdv2009.1
+* Wed Feb 11 2009 GÃ¶tz Waschk <waschk@mandriva.org> 1.1.1-2mdv2009.1
 + Revision: 339353
 - rebuild for new libfaad
 
-* Fri Dec 19 2008 Götz Waschk <waschk@mandriva.org> 1.1.1-1mdv2009.1
+* Fri Dec 19 2008 GÃ¶tz Waschk <waschk@mandriva.org> 1.1.1-1mdv2009.1
 + Revision: 316064
 - new version
 - fix build
 
-* Mon Nov 10 2008 Götz Waschk <waschk@mandriva.org> 1.1.0-2mdv2009.1
+* Mon Nov 10 2008 GÃ¶tz Waschk <waschk@mandriva.org> 1.1.0-2mdv2009.1
 + Revision: 301787
 - rebuild
 - new version
 - drop patches
 
-* Mon Oct 13 2008 Götz Waschk <waschk@mandriva.org> 1.0.3-2mdv2009.1
+* Mon Oct 13 2008 GÃ¶tz Waschk <waschk@mandriva.org> 1.0.3-2mdv2009.1
 + Revision: 293152
 - fix build with new ffmpeg
 
-* Tue Jul 15 2008 Götz Waschk <waschk@mandriva.org> 1.0.3-1mdv2009.0
+* Tue Jul 15 2008 GÃ¶tz Waschk <waschk@mandriva.org> 1.0.3-1mdv2009.0
 + Revision: 235774
 - fix buildrequires
 - new version
@@ -338,19 +338,19 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
   + Pixel <pixel@mandriva.com>
     - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
 
-* Fri Apr 25 2008 Götz Waschk <waschk@mandriva.org> 1.0.2-4mdv2009.0
+* Fri Apr 25 2008 GÃ¶tz Waschk <waschk@mandriva.org> 1.0.2-4mdv2009.0
 + Revision: 197454
 - update the patch
 
-* Fri Apr 25 2008 Götz Waschk <waschk@mandriva.org> 1.0.2-3mdv2009.0
+* Fri Apr 25 2008 GÃ¶tz Waschk <waschk@mandriva.org> 1.0.2-3mdv2009.0
 + Revision: 197424
 - fix build with new ffmpeg
 
-* Fri Jan 18 2008 Götz Waschk <waschk@mandriva.org> 1.0.2-2mdv2008.1
+* Fri Jan 18 2008 GÃ¶tz Waschk <waschk@mandriva.org> 1.0.2-2mdv2008.1
 + Revision: 154554
 - rebuild
 
-* Wed Jan 09 2008 Götz Waschk <waschk@mandriva.org> 1.0.2-1mdv2008.1
+* Wed Jan 09 2008 GÃ¶tz Waschk <waschk@mandriva.org> 1.0.2-1mdv2008.1
 + Revision: 147169
 - new version
 
@@ -369,7 +369,7 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
     - fix summary-ended-with-dot
     - s/Mandrake/Mandriva/
 
-* Wed Apr 18 2007 Götz Waschk <waschk@mandriva.org> 1.0.0-1mdv2008.0
+* Wed Apr 18 2007 GÃ¶tz Waschk <waschk@mandriva.org> 1.0.0-1mdv2008.0
 + Revision: 14609
 - new version
 - drop patches
@@ -377,17 +377,17 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 - update file list
 
 
-* Fri Dec 01 2006 Götz Waschk <waschk@mandriva.org> 0.9.10-2mdv2007.0
+* Fri Dec 01 2006 GÃ¶tz Waschk <waschk@mandriva.org> 0.9.10-2mdv2007.0
 + Revision: 89691
 - fix description
 
-* Fri Dec 01 2006 Götz Waschk <waschk@mandriva.org> 0.9.10-1mdv2007.1
+* Fri Dec 01 2006 GÃ¶tz Waschk <waschk@mandriva.org> 0.9.10-1mdv2007.1
 + Revision: 89593
 - patch for new x264
 - unpack patches
 - Import libquicktime
 
-* Fri Dec 01 2006 Götz Waschk <waschk@mandriva.org> 0.9.10-1mdv2007.1
+* Fri Dec 01 2006 GÃ¶tz Waschk <waschk@mandriva.org> 0.9.10-1mdv2007.1
 - New version 0.9.10
 
 * Fri Sep 01 2006 Anssi Hannula <anssi@mandriva.org> 0.9.9-6mdv2007.0
@@ -410,11 +410,11 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 - add plugin
 - add conditionals for License and configure for mdv/plf
 
-* Fri Jun 30 2006 G�tz Waschk <waschk@mandriva.org> 0.9.8-2mdv2007.0
+* Fri Jun 30 2006 Götz Waschk <waschk@mandriva.org> 0.9.8-2mdv2007.0
 - add ffmpeg module
 - remove hardcoded devel deps
 
-* Thu Mar 02 2006 G�tz Waschk <waschk@mandriva.org> 0.9.8-1mdk
+* Thu Mar 02 2006 Götz Waschk <waschk@mandriva.org> 0.9.8-1mdk
 - add optional support for lame, faac and faad2
 - drop libquicktime1394
 - update file list
@@ -423,7 +423,7 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 * Sat May 28 2005 Christiaan Welvaart <cjw@daneel.dyndns.org> 0.9.7-2mdk
 - fix build deps and automake usage
 
-* Fri May 27 2005 G�tz Waschk <waschk@mandriva.org> 0.9.7-1mdk
+* Fri May 27 2005 Götz Waschk <waschk@mandriva.org> 0.9.7-1mdk
 - fix file list
 - mkrel
 - New release 0.9.7
@@ -434,11 +434,11 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 * Sat Jan 29 2005 Austin Acton <austin@mandrake.org> 0.9.4-2mdk
 - rebuild for new libraw1394
 
-* Thu Jan 13 2005 G�tz Waschk <waschk@linux-mandrake.com> 0.9.4-1mdk
+* Thu Jan 13 2005 Götz Waschk <waschk@linux-mandrake.com> 0.9.4-1mdk
 - update file list
 - New release 0.9.4
 
-* Wed Jul 21 2004 G�tz Waschk <waschk@linux-mandrake.com> 0.9.3-1mdk
+* Wed Jul 21 2004 Götz Waschk <waschk@linux-mandrake.com> 0.9.3-1mdk
 - obsolete static-devel package
 - add new files
 - drop old codecs
@@ -455,7 +455,7 @@ rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
 - build dso with pic
 - lib64 & 64-bit fixes
 
-* Sat Apr 03 2004 G�tz Waschk <waschk@linux-mandrake.com> 0.9.2-2mdk
+* Sat Apr 03 2004 Götz Waschk <waschk@linux-mandrake.com> 0.9.2-2mdk
 - use the mdkversion macro
 - new libdv
 
