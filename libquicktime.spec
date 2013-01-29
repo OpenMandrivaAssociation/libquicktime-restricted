@@ -30,6 +30,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	jpeg-devel
+BuildRequires:	gettext-devel
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	pkgconfig(ogg)
 BuildRequires:	pkgconfig(glu)
