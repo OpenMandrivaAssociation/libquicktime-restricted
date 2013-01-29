@@ -31,6 +31,7 @@ BuildRequires:	automake
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(vorbis)
+BuildRequires:	pkgconfig(ogg)
 BuildRequires:	pkgconfig(glu)
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	ffmpeg-devel
@@ -149,19 +150,29 @@ This package is in restricted as it violates some patents.
 %setup -q
 
 %build
-%configure2_5x \
---with-libdv \
+# remove rpath from libtool
+sed -i -e 's,AM_CONFIG_HEADER,AC_CONFIG_HEADERS,g' configure.*
+autoreconf -fi
+
+%configure2_5x	\
+	--with-libdv \
+	--disable-rpath \
+	--with-cpuflags="$RPM_OPT_FLAGS" \
+	--disable-static \
+	--enable-libswscale \
 %ifarch x86_64
---with-pic \
+	--with-pic \
 %endif
 %if %{build_plf}
 --enable-gpl
 %endif
 
+sed -i.rpath 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
+sed -i.rpath 's|^runpath_var=LD_RUN_PATH|runpath_var=DIE_RPATH_DIE|g' libtool
+
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 rm -f %{buildroot}%{_libdir}/libquicktime/*a
 rm -f %{buildroot}%{_libdir}/libquicktime/lqt_opendivx.so
