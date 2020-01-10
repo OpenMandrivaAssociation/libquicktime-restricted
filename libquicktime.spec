@@ -145,7 +145,7 @@ This package is in restricted as it violates some patents.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 # remove rpath from libtool
 sed -i -e 's,AM_CONFIG_HEADER,AC_CONFIG_HEADERS,g' configure.*
 autoreconf -fi
