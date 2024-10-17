@@ -24,7 +24,7 @@ License:	GPLv2+
 License:	LGPLv2+
 %endif
 Group:		Video
-Url:		http://libquicktime.sourceforge.net/
+Url:		https://libquicktime.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/libquicktime/%{name}-%{version}.tar.gz
 Patch1:		libquicktime-1.2.4-ffmpeg-2.0.patch
 BuildRequires:	doxygen
