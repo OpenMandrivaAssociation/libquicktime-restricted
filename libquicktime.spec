@@ -27,6 +27,11 @@ Group:		Video
 Url:		https://libquicktime.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/libquicktime/%{name}-%{version}.tar.gz
 Patch1:		libquicktime-1.2.4-ffmpeg-2.0.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	doxygen
 BuildRequires:	gettext-devel
 BuildRequires:	ffmpeg-devel
